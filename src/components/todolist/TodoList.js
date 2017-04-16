@@ -1,5 +1,6 @@
 import React, {Component} from  "react";
-import TodoItem from "../../modules/TodoItem/TodoItem"
+import TodoItem from "../../modules/TodoItem/TodoItem";
+import TodoInput from "../../modules/TodoInput/TodoInput";
 class TodoList extends Component {
 	render() {
 
@@ -9,9 +10,13 @@ class TodoList extends Component {
 			{name: "Third Item", done: false}
 		];
 		return (
-			<ul>
+
+			<div>
+				<ul>
 				{ items.map(item => <TodoItem name={item.name} done={item.done}  />)  }
 			</ul>
+				<TodoInput/>
+			</div>
 		);
 	}
 }
