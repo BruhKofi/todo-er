@@ -6,8 +6,8 @@ class TodoItem extends Component {
 
 		return (
 			<li style={{
-				textDecoration: this.props.done ? "line-through" : "none"
-			}}>{ this.props.name }</li>
+				textDecoration: this.prop.done ? "line-through" : "none"
+			}}>{ this.prop.name }</li>
 		);
 	}
 }
