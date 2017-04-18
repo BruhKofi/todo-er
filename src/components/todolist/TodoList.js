@@ -11,21 +11,18 @@ class TodoList extends Component {
 	}
 
 	handleAddItem(name) {
-		console.log("handle add item", name);
-		const newItems = this.state.items.concat({ name: name, done: false });
-		console.log("handle add item", name);
+		const newItems = this.state.items.concat([{ name: name, done: false }]);
 		this.setState({items: newItems});
 	}
 
 	render() {
-
 		return (
 
 			<div>
 				<ul>
-					{ this.state.items.map(item => <TodoItem name={item.name} done={item.done}/>)  }
+					{ this.state.items.map((item, i) => <TodoItem key={i} name={item.name} done={item.done}/>)  }
 				</ul>
-				<TodoInput onAddItem={this.handleAddItem}/>
+				<TodoInput onAddItem={this.handleAddItem.bind(this)}/>
 			</div>
 		);
 	}
